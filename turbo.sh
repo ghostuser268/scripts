@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 
 boost=/sys/devices/system/cpu/cpufreq/boost
 switch=$(cat ${boost}) 
