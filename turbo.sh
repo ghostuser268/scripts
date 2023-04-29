@@ -1,7 +1,7 @@
 #!/bin/sh
 
 boost=/sys/devices/system/cpu/cpufreq/boost
-switch=$(cat ${boost}) 
+#switch=$(cat ${boost}) 
 
 echo "0" | sudo tee $boost
 

@@ -1,6 +1,6 @@
-#!/bin/bash
-ipv6=$(sysctl net.ipv6.conf.all.disable_ipv6 | awk '{print $NF}')
+name=$1
+if [[ -f /bin/nmcli ]];then
+	 (echo "echo $name"; echo "set ipv6.method disabled"; echo "save"; echo "quit") | nmcli 
+fi
 
 
-[[ $ipv6 == 1 ]] && sudo sysctl -w net.ipv6.conf.all.disable_ipv6=0 || sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1
-#echo $ipv
